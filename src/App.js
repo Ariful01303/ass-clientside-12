@@ -4,7 +4,6 @@ import {
   Switch,
   Route,
  } from "react-router-dom";
-import About from './components/About/About';
 import Home from './components/Home/Home';
 
 import AuthProvider from './components/Authcontext/AuthProvider';
@@ -13,6 +12,7 @@ import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRout/PrivateRoute';
 import DashBoard from './components/DashBoard/DashBoard';
 import Detail from './components/Detail/Detail';
+import Service from './components/Services/Service';
 function App() {
   return (
     <div className="App">
@@ -20,24 +20,23 @@ function App() {
        <Router>
          <Header></Header>
        <Switch>
-          <PrivateRoute path="/about">
-            <About />
-          </PrivateRoute>
+          
           <Route exact path="/">
             <Home />
           </Route>
           <Route path="/home">
             <Home />
           </Route>
-          {/* <Route path="/addProduct">
-            <AddAproduct></AddAproduct>
-          </Route> */}
+          
           <PrivateRoute path="/dashboard">
             <DashBoard></DashBoard>
           </PrivateRoute>
           <PrivateRoute path="/detail/:dtl">
             <Detail></Detail>
           </PrivateRoute>
+          <Route path="/serv">
+            <Service></Service>
+          </Route>
           <Route exact path="/login">
               <Login></Login>
             </Route>

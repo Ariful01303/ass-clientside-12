@@ -20,9 +20,10 @@ const Header = () => {
     <Navbar.Collapse className="justify-content-end">
 
     <Nav.Link as ={HashLink} to="/home#home">Home</Nav.Link>
-      <Nav.Link as ={HashLink} to="/home#service">See more Services</Nav.Link>
-     
-      <Nav.Link as ={Link} to="/about">About Us</Nav.Link>
+    <Nav.Link as ={HashLink} to="/home#about">About Us</Nav.Link>
+    <Nav.Link as ={Link} to="/serv">More Products</Nav.Link>
+    
+
       
      
       {user?.email?

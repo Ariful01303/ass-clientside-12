@@ -6,7 +6,7 @@ import './Login.css'
 import useAuth from '../Firebase/useFirebase/useAuth';
 
 const Login = () => {
-    const {singInGoogle,user,logOut, handleUserRegister,handleUserLogin}=useAuth()
+    const {singInGoogle,user,logOut, handleUserRegister,handleUserLogin,hanldeUserInfoRegister}=useAuth()
    
     const location=useLocation();
     const history=useHistory();
@@ -29,18 +29,19 @@ const Login = () => {
   
   
     const handleRegister = () => {
+
       if (password.length < 6) {
         setError('Password Must be at least 6 characters long')
         return;
       }
-      if  (!/(?=.*[^A-Za-z0-9_])/.test(password)) {
-        setError('Please insert hard Password like (special characters)');
-        return;
-      }
+     
       
       handleUserRegister(email, password)
       .then((result) => {
         history.push(redirectUrl)
+     
+        hanldeUserInfoRegister(result.user.email)
+
         setError('');
        })
        .catch(error => {
@@ -68,6 +69,8 @@ const Login = () => {
         singInGoogle()
         .then(result=>{
            history.push(redirectUrl);
+           hanldeUserInfoRegister(result.user.email)
+
            setError('');
         })
         .catch(error => {

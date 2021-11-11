@@ -55,7 +55,17 @@ import firebaseInit from "../firebaseinit";
           .finally(() => { setLoading(false) });
           
       };
-  
+        
+
+      const hanldeUserInfoRegister = (email) => {
+        fetch("http://localhost:5000/adminUserInfo", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ email }),
+        })
+          .then((res) => res.json())
+          .then((result) => console.log(result));
+      };
   
         return {
             user,
@@ -63,7 +73,9 @@ import firebaseInit from "../firebaseinit";
             logOut,
             loading,
             handleUserLogin,
-            handleUserRegister
+            handleUserRegister,
+            hanldeUserInfoRegister
+
   
         }
       

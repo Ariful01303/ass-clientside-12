@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import useAuth from '../Firebase/useFirebase/useAuth';
 
-const Service = () => {
+const ManageProducts = () => {
     const {loading}=useAuth()
     const [services,setServices]=useState([])
 
@@ -14,6 +13,26 @@ const Service = () => {
         .then(data=>setServices(data)) 
         
   },[])
+  const handleDelete= (id) => {
+    const proceed=window.confirm("Are you sure, You want to Delete?")
+      if(proceed){
+        fetch(`http://localhost:5000/services/${id}`, {
+          method: "DELETE",
+        
+        })
+          .then((res) => res.json())
+          .then((result) => {
+              
+            if (result.deletedCount) {
+               
+               alert("Successfully Deleted")
+               const remaining=services.filter(bk=>bk._id !==id)
+               setServices(remaining)
+    
+            } 
+          });
+      }
+    };
     
     return (
         <div className="container">
@@ -26,13 +45,9 @@ const Service = () => {
            {
                   services.map((service)=><div className="col-lg-4 col-md-6 g-2 col-sm-12 col-12 border extra-style">
                   <img className="w-100" src={service.photo} alt="" />
-                  <h2>{service.name}</h2>
-                   <p>{service.description.slice(0,120)}</p>
-
-                   <h2 className="text-warning">Price: {service.price}</h2>
-                   <Link to={`/detail/${service._id}`}>
-                       <button className="btn btn-warning  mb-2">Detail</button>
-                   </Link>
+                 <h2>name{service.name}</h2>
+                 <button className="btn btn-danger mb-2" onClick={()=>handleDelete(service._id)}>Delete</button>
+                   
              </div>)
                      
 
@@ -45,4 +60,4 @@ const Service = () => {
     );
 };
 
-export default Service;
+export default ManageProducts;
