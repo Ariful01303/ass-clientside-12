@@ -30,7 +30,7 @@ const Detail = () => {
     useEffect(()=>{
         const founddel=details.find((del)=>del._id===dtl)
                setDetail(founddel)
-    },[details])
+    },[details,dtl])
    
     return (
         <div className="div d-flex container   mt-5 mb-5 justify-content-center align-items-center">

@@ -31,7 +31,7 @@ import firebaseInit from "../firebaseinit";
           setLoading(false);
         });
         return ()=>unSubscrived;
-      }, []);
+      }, [auth]);
   
   
   

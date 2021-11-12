@@ -47,7 +47,7 @@ const Home = () => {
                
              <div className="row">
              {
-                    services.slice(0,6).map((service)=><div className="col-lg-4 col-md-6 g-2 col-sm-12 col-12 border extra-style">
+                    services.slice(0,6).map((service)=><div key={service._id} className="col-lg-4 col-md-6 g-2 col-sm-12 col-12 border extra-style">
                     <img className="w-100 p-2" src={service.photo} alt="" />
                    <h2>{service.name}</h2>
                    <p>{service.description.slice(0,120)}</p>

@@ -11,7 +11,7 @@ useEffect(()=>{
     .then(res=>res.json())
     .then(data=>setorderDetail(data))
 
-},[user?.email])
+},[email])
 
 const handleDeleteBooking = (id) => {
   const proceed=window.confirm("Are you sure, You want to Delete?")
