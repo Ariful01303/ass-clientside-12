@@ -69,12 +69,13 @@ const Home = () => {
            <h2 className="text-danger">Clients Reviews</h2>
            {loading?<Spinner animation="border" variant="warning" /> : 
           <div>
-               <div className="d-flex row">
+               <div className="d-flex row p-5">
                    
                {
-                   review.map(client=><div className="col-xl-3 col-md-3 col-sm-6 col-6 p-2 client borer text-center" key={client._id}>
-                       <p> {client.userName}: {client.comments} </p>
-                      
+                   review.map(client=><div className="col-xl-3 col-md-3 col-sm-12 col-12 " key={client._id}>
+                       <p className="badge text-wrap  text-center tes text-break"> {client.userName} : {client.comments
+} </p>
+                        
                    </div>)
                }
                </div>

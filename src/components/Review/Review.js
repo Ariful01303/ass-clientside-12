@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import useFirebase from '../Firebase/useFirebase/useFirebase';
 
 const Review = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, reset} = useForm();
     const { user } = useFirebase();
     const onSubmit = (data) => {
       fetch("http://localhost:5000/review", {
@@ -14,7 +14,7 @@ const Review = () => {
         .then((res) => res.json())
         .then((result) => console.log(result));
   
-      console.log(data);
+        reset()
     };
     return (
         <div>
@@ -31,6 +31,7 @@ const Review = () => {
            className="p-2 m-2 w-50"
             name="userName"
             placeholder="User Name"
+            value={user?.displayName}
             type="text"
             {...register("userName", { required: true })}
           />

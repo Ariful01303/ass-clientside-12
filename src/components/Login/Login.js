@@ -58,6 +58,8 @@ const Login = () => {
       handleUserLogin(email, password)
       .then((result) => {
         history.push(redirectUrl)
+        hanldeUserInfoRegister(result.user.email)
+
         setError('');
        })
        .catch(error => {
