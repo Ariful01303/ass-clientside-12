@@ -7,6 +7,8 @@ const url=(`https://inteng-storage.s3.amazonaws.com/images/SEPTEMBER/sizes/e2_ku
 const Home = () => {
     const {loading}=useAuth()
     const [services,setServices]=useState([])
+    const [review,setReview]=useState([])
+
 
 
     useEffect(()=>{
@@ -15,6 +17,12 @@ const Home = () => {
         .then(data=>setServices(data)) 
         
   },[])
+  useEffect(()=>{
+    fetch('http://localhost:5000/review')
+    .then(res=>res.json())
+    .then(data=>setReview(data)) 
+    
+},[])
     return (
         <div>
                <div className="bike-banner mb-5 d-flex justify-content-center align-items-center"id="home">
@@ -40,7 +48,7 @@ const Home = () => {
              <div className="row">
              {
                     services.slice(0,6).map((service)=><div className="col-lg-4 col-md-6 g-2 col-sm-12 col-12 border extra-style">
-                    <img className="w-100" src={service.photo} alt="" />
+                    <img className="w-100 p-2" src={service.photo} alt="" />
                    <h2>{service.name}</h2>
                    <p>{service.description.slice(0,120)}</p>
 
@@ -57,6 +65,21 @@ const Home = () => {
             </div>
             </div>}
             </div>
+            <div className="container border"id="review">
+           <h2 className="text-danger">Clients Reviews</h2>
+           {loading?<Spinner animation="border" variant="warning" /> : 
+          <div>
+               <div className="d-flex row">
+                   
+               {
+                   review.map(client=><div className="col-xl-3 col-md-3 col-sm-6 col-6 p-2 client borer text-center" key={client._id}>
+                       <p> {client.userName}: {client.comments} </p>
+                      
+                   </div>)
+               }
+               </div>
+               </div>}
+           </div>
             <div id="about">
            <div>
              <div className="mt-5 mb-5 container">

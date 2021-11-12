@@ -20,12 +20,10 @@ const Header = () => {
     <Navbar.Collapse className="justify-content-end">
 
     <Nav.Link as ={HashLink} to="/home#home">Home</Nav.Link>
-    <Nav.Link as ={HashLink} to="/home#about">About Us</Nav.Link>
     <Nav.Link as ={Link} to="/serv">More Products</Nav.Link>
-    
+    <Nav.Link as ={HashLink} to="/home#about">About Us</Nav.Link>
 
-      
-     
+   
       {user?.email?
      <div className="d-flex">
           

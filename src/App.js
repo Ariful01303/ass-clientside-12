@@ -13,6 +13,7 @@ import PrivateRoute from './components/PrivateRout/PrivateRoute';
 import DashBoard from './components/DashBoard/DashBoard';
 import Detail from './components/Detail/Detail';
 import Service from './components/Services/Service';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -41,6 +42,7 @@ function App() {
               <Login></Login>
             </Route>
         </Switch>
+        <Footer></Footer>
        </Router>
        </AuthProvider>
     </div>

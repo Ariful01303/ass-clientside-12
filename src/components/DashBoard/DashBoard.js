@@ -8,6 +8,7 @@ import useAuth from '../Firebase/useFirebase/useAuth';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
+import Review from '../Review/Review';
 import './DashBord.css'
 
 const DashBoard = () => {
@@ -30,7 +31,7 @@ const DashBoard = () => {
      console.log(isAdmin);
     return (
    
-     <div className="container">
+     <div className="container mb-5">
           <div className="dashboard-container ">
         <div className="row">
           <div className="col-lg-3 col-md-3 col-sm-12 col-12">
@@ -38,8 +39,8 @@ const DashBoard = () => {
             <img className="dash-pic mt-5" src={user?.photoURL} alt="" />
                <p>{user.email}</p>
             
-              <div>
-              <h5 className="pt-5">Dashboard</h5>
+        {isAdmin ||  (    <div>
+              <h5 className="pt-5 text-primary">Dashboard</h5>
            
            <Link to={`${url}/payment`}  className="teast">
              <li className="dashboard-menu mt-5">Payment</li>
@@ -50,14 +51,15 @@ const DashBoard = () => {
            <Link to={`${url}/review`} className="teast">
              <li className="dashboard-menu">Review</li>
            </Link>
-           </div>
+           </div>)}
 
          { isAdmin && ( <div className="admin-dashboard">
-                <li className="dashboard-menu mt-5">Admin Dashboard</li>
+                <h5 className="dashboard-menu mt-5 text-primary">Admin Dashboard</h5>
 
                 <Link to={`${url}/manageproducts`} className="teast">
                   <li className="dashboard-menu">Manage Products</li>
                 </Link>
+               
                 <Link to={`${url}/makeAdmin`} className="teast">
                   <li className="dashboard-menu">Make Admin</li>
                 </Link>
@@ -75,6 +77,9 @@ const DashBoard = () => {
             <Switch>
               <Route exact path={`${path}/payment`}>
                 <Payment></Payment>
+              </Route> 
+               <Route exact path={`${path}/review`}>
+                <Review></Review>
               </Route> 
               <Route exact path={`${path}/order`}>
                 <MyOrders></MyOrders>

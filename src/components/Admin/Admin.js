@@ -16,7 +16,7 @@ const Admin = () => {
   };
     return (
         <div>
-        <h1>make admin</h1>
+        <h1>Make Admin by Email</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             className="input-field"
@@ -30,7 +30,7 @@ const Admin = () => {
           <input
             className="submit-btn btn btn-danger mt-3"
             type="submit"
-            value="make as Admin"
+            value="Send"
           />
         </form>
       </div>
