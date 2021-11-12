@@ -7,7 +7,7 @@ const MyOrders = () => {
 const email=user?.email;
 const [orderDetail,setorderDetail]=useState([])
 useEffect(()=>{
-    fetch(`http://localhost:5000/detail/${email}`)
+    fetch(`https://fast-cliffs-41980.herokuapp.com/detail/${email}`)
     .then(res=>res.json())
     .then(data=>setorderDetail(data))
 
@@ -16,7 +16,7 @@ useEffect(()=>{
 const handleDeleteBooking = (id) => {
   const proceed=window.confirm("Are you sure, You want to Delete?")
     if(proceed){
-      fetch(`http://localhost:5000/detail/${id}`, {
+      fetch(`https://fast-cliffs-41980.herokuapp.com/detail/${id}`, {
         method: "DELETE",
       
       })

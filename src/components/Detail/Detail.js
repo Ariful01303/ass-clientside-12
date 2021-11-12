@@ -12,7 +12,7 @@ const Detail = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data =>{
    
-      fetch("http://localhost:5000/detail", {
+      fetch("https://fast-cliffs-41980.herokuapp.com/detail", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),
@@ -23,7 +23,7 @@ const Detail = () => {
     };  
 
     useEffect(()=>{
-         fetch('http://localhost:5000/services')
+         fetch('https://fast-cliffs-41980.herokuapp.com/services')
          .then(res=>res.json())
          .then(data=>setDetails(data))
     },[])

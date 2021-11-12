@@ -14,6 +14,7 @@ import DashBoard from './components/DashBoard/DashBoard';
 import Detail from './components/Detail/Detail';
 import Service from './components/Services/Service';
 import Footer from './components/Footer/Footer';
+import NoFound from './components/NoFound/NoFound';
 function App() {
   return (
     <div className="App">
@@ -41,6 +42,9 @@ function App() {
           <Route exact path="/login">
               <Login></Login>
             </Route>
+            <Route path="/*">
+       <NoFound></NoFound>
+     </Route>
         </Switch>
         <Footer></Footer>
        </Router>

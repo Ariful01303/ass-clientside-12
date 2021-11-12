@@ -8,7 +8,7 @@ const ManageProducts = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://fast-cliffs-41980.herokuapp.com/services')
         .then(res=>res.json())
         .then(data=>setServices(data)) 
         
@@ -16,7 +16,7 @@ const ManageProducts = () => {
   const handleDelete= (id) => {
     const proceed=window.confirm("Are you sure, You want to Delete?")
       if(proceed){
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(`https://fast-cliffs-41980.herokuapp.com/services/${id}`, {
           method: "DELETE",
         
         })
@@ -45,7 +45,7 @@ const ManageProducts = () => {
            {
                   services.map((service)=><div className="col-lg-4 col-md-6 g-2 col-sm-12 col-12 border extra-style">
                   <img className="w-100" src={service.photo} alt="" />
-                 <h2>name{service.name}</h2>
+                 <h2>{service.name}</h2>
                  <button className="btn btn-danger mb-2" onClick={()=>handleDelete(service._id)}>Delete</button>
                    
              </div>)

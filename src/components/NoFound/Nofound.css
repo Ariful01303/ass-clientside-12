@@ -1,0 +1,10 @@
+.nofound-banner{
+    background-image: url('https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg');
+    height: 80vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    background-attachment: scroll;
+    background-blend-mode: overlay;
+}

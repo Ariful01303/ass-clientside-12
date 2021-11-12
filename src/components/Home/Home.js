@@ -12,13 +12,13 @@ const Home = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://fast-cliffs-41980.herokuapp.com/services')
         .then(res=>res.json())
         .then(data=>setServices(data)) 
         
   },[])
   useEffect(()=>{
-    fetch('http://localhost:5000/review')
+    fetch('https://fast-cliffs-41980.herokuapp.com/review')
     .then(res=>res.json())
     .then(data=>setReview(data)) 
     
