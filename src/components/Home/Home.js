@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 import useAuth from '../Firebase/useFirebase/useAuth';
 import './Home.css'
@@ -75,6 +76,11 @@ const Home = () => {
                    review.map(client=><div className="col-xl-3 col-md-3 col-sm-12 col-12 " key={client._id}>
                        <p className="badge text-wrap  text-center tes text-break"> {client.userName} : {client.comments
 } </p>
+                      <Rating
+                    initialRating={client.star}
+                    emptySymbol="far fa-star icon-color"
+                    fullSymbol="fas fa-star icon-color"
+                    readonly></Rating>
                         
                    </div>)
                }
@@ -87,9 +93,9 @@ const Home = () => {
             <h2 className="text-danger mt-5 mb-5" id="about">About us</h2>
             <div className="d-flex justify-content-cente align-items-center row ">
             <div className="col-lg-6 col-md-12 col-sm-12 col-12">
-              <p>The Motorbike Shop is the South’s leading Premier Yamaha Dealer. A privately owned business based in Hampshire, offering the highest levels of service and expertise, whether you are looking to purchase a new Yamaha, a used motorcycle, or to service and maintain your current motorcycle.
+              <p>The Motorbike Shop is the South’s leading Premier  Honda,Suzuki,YAMAHA,Apache,Hero,Bajaj Dealer. A privately owned business based in Hampshire, offering the highest levels of service and expertise, whether you are looking to purchase a new Yamaha, a used motorcycle, or to service and maintain your current motorcycle.
 
-The Motorbike Shop showcase a large selection of the latest new Yamaha models, plus an extensive choice of top quality used motorcycles. We also keep a great range of Yamaha demonstrator models and if you bring your bike in with you, we can value it for part exchange and work out a deal that suits you.
+The Motorbike Shop showcase a large selection of the latest new  Honda,Suzuki,YAMAHA,Apache,Hero,Bajaj ect. models, plus an extensive choice of top quality used motorcycles. We also keep a great range of Yamaha demonstrator models and if you bring your bike in with you, we can value it for part exchange and work out a deal that suits you.
 
 We also offer competitive finance from a variety of providers, including regular Yamaha backed promotions through Santander Finance.</p>
              </div>
