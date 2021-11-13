@@ -57,7 +57,6 @@ const Detail = () => {
       <input className="p-2 m-2 w-75" type="number" {...register("contact")} placeholder="Your Contact Number"/> <br />
       
               
-      <input className="p-2 m-2 w-75" {...register("img")} placeholder="Send Your Img Url"/> <br />
       <input className="btn btn-primary" type="submit" />
     </form>
        

@@ -20,13 +20,7 @@ const Review = () => {
         <div>
         <h1>Review</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className="p-2 m-2 w-50"
-            name="email"
-            value={user?.email}
-            type="email"
-            {...register("email", { required: true })}
-          />
+         
           <input
            className="p-2 m-2 w-50"
             name="userName"
@@ -43,11 +37,22 @@ const Review = () => {
             {...register("comments", { required: true })}
           />
           <br />
-  
+          <select
+          className="p-2 m-2 w-50"
+          {...register("star")}>
+        <option value="1">0 Star</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Star</option>
+        <option value="3">3 Star</option>
+        <option value="4">4 Star</option>
+        <option value="5">5 Star</option>
+      </select>
+           <br/>
+
           <input
             className="submit-btn btn btn-danger mt-3"
             type="submit"
-            value="Register"
+            value="Send"
           />
         </form>
       </div>

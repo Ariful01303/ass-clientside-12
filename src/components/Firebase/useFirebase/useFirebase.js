@@ -58,7 +58,7 @@ import firebaseInit from "../firebaseinit";
         
 
       const hanldeUserInfoRegister = (email) => {
-        fetch("http://localhost:5000/adminUserInfo", {
+        fetch("https://fast-cliffs-41980.herokuapp.com/adminUserInfo", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ email }),
