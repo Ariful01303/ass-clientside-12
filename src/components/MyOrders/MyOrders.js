@@ -37,23 +37,22 @@ const handleDeleteBooking = (id) => {
         <div className="container  pb-5">
             <div className="d-flex align-items-center justify-content-center ">
             
-            <div className="row ">
+            <div className="row p-2 ">
             {
                 orderDetail.map(detl=><div className="col-lg-12 col-md-12 col-sm-12 col-12 g-2 border extra-style" key={detl._id}>
                    
-                    <img src={detl?.img} alt="" />
+                 
                     <h4>{detl?.displayName}</h4>
-                    <h4>{detl.email}</h4>
-                    <h4>{detl?.name}</h4>
-                    <h4>{detl.displayName} location: {detl?.location}</h4>
+                    <h4>{detl?.email}</h4>
+                    
+                    <h4>{detl?.displayName} location: {detl?.location}</h4>
                     <h4>Contact Num :{detl?.contact}</h4>
                     
-                    <h4>Total Amount :{detl?.price}</h4>
+                    <p>Total Amount: {detl?.price}</p>
                    
                  
                    <div className="d-flex justify-content-between p-2" >
                    
-                    {/* <button className="btn btn-danger mb-2" onClick={handlecomfrom}>Conform</button> */}
                     <Link to={`/manageorder/${detl._id}`}><button className="btn btn-primary">Conform</button></Link>
                     <button className="btn btn-danger mb-2" onClick={()=>handleDeleteBooking(detl._id)}>Cencel</button>
                    
