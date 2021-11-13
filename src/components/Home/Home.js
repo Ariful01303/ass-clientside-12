@@ -54,7 +54,7 @@ const Home = () => {
 
                    <h2 className="text-warning">Price: {service.price}</h2>
                    <Link to={`/detail/${service._id}`}>
-                       <button className="btn btn-warning  mb-2">Detail</button>
+                       <button className="btn btn-warning  mb-2">Purchase Detail</button>
                    </Link>
                </div>)
                        

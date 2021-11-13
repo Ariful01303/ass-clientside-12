@@ -44,7 +44,7 @@ const Detail = () => {
         </div>
         <div  className="extra-sty col-lg-6 m-auto col-md-6 col-sm-12 p-2 col-12 w-50  ">
         
-            <h3>Add Torist Details</h3>
+            <h3>Add Purchaser Details</h3>
              <form onSubmit={handleSubmit(onSubmit)}>
    
      
